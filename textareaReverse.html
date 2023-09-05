@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Textarea Reverse</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <textarea
+        name=""
+        placeholder="Write Something"
+        id=""
+        cols="30"
+        rows="10"
+      ></textarea>
+      <p id="output"></p>
+    </div>
+    <script>
+      const textarea = document.querySelector("textarea");
+      let output = document.querySelector("p");
+
+      textarea.onkeyup = () => {
+        if(textarea.value.length > 1){
+            let temp = ''
+            for(let i=textarea.value.length - 1; i>=0;i--){
+                temp += textarea.value[i]
+            }
+            output.innerHTML = temp
+        }
+      };
+    </script>
+  </body>
+</html>
